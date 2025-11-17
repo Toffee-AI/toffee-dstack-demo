@@ -1,0 +1,50 @@
+# https://dstack.ai/docs/reference/dstack.yml/service
+
+type: service
+
+name: ${SERVICE_NAME}
+
+backends:
+  - runpod
+  - vastai
+
+replicas: ${REPLICAS}
+
+spot_policy: ${SPOT_POLICY}
+
+resources:
+  cpu: ${CPU}
+  memory: ${MEMORY}
+  gpu: ${GPU}
+  disk: ${DISK}
+
+retry:
+  duration: ${RETRY_DURATION}
+
+image: runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
+
+files:
+  - ../../..:/app
+working_dir: /app
+
+env:
+  # https://docs.sglang.ai/get_started/install.html#method-1-with-pip-or-uv
+  - CUDA_HOME=/usr/local/cuda
+
+  - HOST
+  - PORT
+  - HF_TOKEN
+
+commands:
+  - chmod +x ./services/${SERVICE_NAME}/scripts/setup.bash
+  - ./services/${SERVICE_NAME}/scripts/setup.bash
+  - chmod +x ./services/${SERVICE_NAME}/scripts/start.bash
+  - exec ./services/${SERVICE_NAME}/scripts/start.bash
+
+port: ${PORT}
+
+probes:
+  - type: http
+    url: /health
+    interval: 10s
+    timeout: 5s

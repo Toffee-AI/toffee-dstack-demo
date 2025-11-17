@@ -1,0 +1,19 @@
+# dstack Server Configuration Example
+#
+# This file demonstrates how to configure your dstack server with RunPod and VastAI backends.
+# To use this configuration:
+#
+# For more information, see: https://dstack.ai/docs
+
+projects:
+  - name: mistral-7b
+    backends:
+      - type: runpod
+        creds:
+          type: api_key
+          api_key: YOUR_RUNPOD_API_KEY_HERE
+
+      - type: vastai
+        creds:
+          type: api_key
+          api_key: YOUR_VASTAI_API_KEY_HERE

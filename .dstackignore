@@ -1,0 +1,16 @@
+.git/
+.github/
+.gitignore
+
+.idea/
+
+docs/
+
+.env
+example.env
+
+server/
+
+README.md
+CONTRIBUTING.md
+LICENSE
