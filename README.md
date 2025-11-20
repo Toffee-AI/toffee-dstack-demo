@@ -17,6 +17,7 @@ This project demonstrates how to:
 
 ## Table of Contents
 
+- [Tested Environment](#tested-environment)
 - [Prerequisites](#prerequisites)
     - [1. Install dstack CLI](#1-install-dstack-cli)
     - [2. Set up dstack Server](#2-set-up-dstack-server)
@@ -50,6 +51,17 @@ This project demonstrates how to:
 - [Learn More](#learn-more)
 - [License](#license)
 - [Contributing](#contributing)
+
+## Tested Environment
+
+This project was initially developed and tested with:
+
+- **OS**: Ubuntu 22.04 LTS
+- **Shell**: Bash 5.1+
+- **Python**: 3.11+
+- **Docker**: 24.0+ (for local testing)
+
+While the project should work on other Unix-like systems (macOS, other Linux distributions), the scripts and configurations have been validated on the environment above.
 
 ## Prerequisites
 
