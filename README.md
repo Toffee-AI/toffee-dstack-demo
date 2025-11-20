@@ -335,7 +335,7 @@ toffee-dstack-demo/
 
 ### Model Download Fails
 
-1. Set HuggingFace token: `export HF_TOKEN="your_token"`
+1. Set HuggingFace token (we tested with `Read` scope token): `export HF_TOKEN="your_token"`
 2. Accept model license on HuggingFace
 3. Verify model ID is correct
 
